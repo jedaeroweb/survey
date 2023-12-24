@@ -1,0 +1,27 @@
+<%
+	question_category_female=QuestionCategory.where(:female_only=>true)
+	male_total_question=Question.where(:enable=>true).where.not(:question_category_id=>question_category_female.ids).count
+	female_total_question=Question.where(:enable=>true).count
+%>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => {:class=>"form-horizontal",:id=>"sl_login_form",:role=>"form"} ) do |f| %>
+	<div class="card mb-3">
+		<div class="card-body p-5">
+		<div class="form-group">
+		<%= f.label :email,{class:'col-lg-4 form-label'} %>
+		<div class="col-12 col-lg-8">
+			<%= f.text_field :email, :autofocus => true, :class=>"form-control form-control-lg",:required=>"required", :placeholder=>t(:label_email) %>
+		</div>
+	</div>
+	<div class="form-group">
+		<%= f.label :password,{class:'col-12 col-lg-4 form-label'} %>
+		<div class="col-12 col-lg-8">
+			<%= f.password_field :password,:class=>"form-control form-control-lg",:required=>"required", :placeholder=>t(:login_p_password) %>
+		</div>
+	</div>
+
+		</div>
+	</div>
+	<div class="d-grid gap-2 mb-3">
+		<button type="submit" class="btn btn-primary btn-lg"><%= t(:login) %></button>
+	</div>
+<% end %>

@@ -1,0 +1,22 @@
+<header>
+	<div class="container">
+		<i id="mobile_menu" class="material-icons" style="font-size:35px;vertical-align:middle">view_headline</i>
+		<div id="top_menu" class="row">
+				<div class="col-12">
+					<ul>
+						<% if(current_user) %>
+							<li>
+								<% if current_user.photo?  %>
+									<%=image_tag current_user.photo.small_thumb.url %>
+								<% end %>
+								<%= link_to edit_user_registration_path do %><%=current_user.name %><% end %> <%=t(:welcome) %></li>
+							<li><%= link_to t(:logout),destroy_user_session_path %></li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		<div class="row">
+			<h1 class="colo-12 text-center"><%=link_to t(:service_name),root_path %></h1>
+		</div>
+	</div>
+</header>

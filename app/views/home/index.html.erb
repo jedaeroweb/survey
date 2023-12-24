@@ -1,0 +1,38 @@
+<section>
+  <h2>투표들</h2>
+  <% @surveys.each do |survey| %>
+  <article>
+    <article class="users media shadow-sm rounded p-3">
+      <div class="media-left">
+        <% if survey.survey_pictures_count.zero? %>
+          <div class="media-object mr-3">
+            <span class="material-icons">person</span>
+          </div>
+        <% else %>
+          <%= link_to image_tag(survey.survey_picture.photo.small_thumb.url, :alt => survey.title), survey.survey_picture.photo.large_thumb.url, :class => 'simple_image media-object mr-3', :title => survey.title, :itemprop => "image" %>
+        <% end %>
+      </div>
+      <div class="media-body">
+        <h3 itemprop="name" class="media-heading"><%= link_to survey.title, survey_path(survey) %></h3>
+        <% if survey.survey_contents_count %>
+          <p>
+            <%=survey.survey_content.content %>
+          </p>
+          <% end %>
+        <div class="vote">
+          <% if user_signed_in? %>
+            <%= link_to like_survey_path(survey), method: :put do %>
+                <span class="material-icons
+                  <% if current_user.voted_for? survey %> already-vote
+                  <% end %>">thumb_up</span><span class="text"> <%= survey.cached_votes_up %></span>
+            <% end %>
+          <% else %>
+            <%= link_to like_survey_path(survey), { method: :put, :class => "confirm_login" } do %>
+              <span class="material-icons">thumb_up</span><span class="text"> <%= survey.cached_votes_up %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </article>
+  <% end %>
+</section>

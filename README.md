@@ -1,24 +1,23 @@
-# README
+# What is Jedaeroweb Survey
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Jedaeroweb Survey is Oepn Survey flatform
 
-Things you may want to cover:
+this application is composed of [Rails](http://rubyonrails.org/)(user-pages,admin-pages) + UI [Boostrap](http://getbootstrap.com)
 
-* Ruby version
+## Server Requirements
 
-* System dependencies
+[Rails](http://rubyonrails.org/) version 7 or newer is recommended.
 
-* Configuration
+## Demo
+[demo page](https://survey.jedaeroweb.co.kr)
 
-* Database creation
+go page(login use email:user@jedaeroweb.co.kr / password:a12345 ) and order
+admin page  (/admin)
 
-* Database initialization
+## License
 
-* How to run the test suite
+MIT, All Free
 
-* Services (job queues, cache servers, search engines, etc.)
+## Author
 
-* Deployment instructions
-
-* ...
+[jedaeroweb](https://www.jedaeroweb.co.kr)

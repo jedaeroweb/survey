@@ -1,7 +1,6 @@
 class AdminAuthentication < ApplicationRecord
   belongs_to :admin
   belongs_to :authentication_provider
-  serialize :params
 
   def self.create_from_omniauth(params, user, provider)
     token_expires_at = params['credentials']['expires_at'] ? Time.at(params['credentials']['expires_at']).to_datetime : nil

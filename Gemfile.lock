@@ -601,7 +601,7 @@ DEPENDENCIES
   meta-tags
   mini_magick
   mysql2
-  nokogiri (>= 1.12.5)
+  nokogiri (>= 1.14.2)
   oauth2
   omniauth
   omniauth-apple

@@ -50,7 +50,7 @@ gem 'sitemap_generator'
 gem 'meta-tags'
 gem 'gretel'
 gem 'i18n-js'
-gem 'nokogiri', '>= 1.14.2'
+gem 'nokogiri', '>= 1.14.3'
 gem 'globalize'
 
 #gem 'acts-as-taggable-on', '~> 9.0'

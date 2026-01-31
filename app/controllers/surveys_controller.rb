@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-    load_and_authorize_resource except: [:index, :create, :complete]
+    load_and_authorize_resource except: [:index, :create]
     before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
     # GET /surveys

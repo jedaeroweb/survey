@@ -8,6 +8,14 @@ class UsersController < ApplicationController
         @controller_name = t('activerecord.models.user')
     end
 
+    def show
+
+    end
+
+    def new
+
+    end
+
     # POST /users
     # POST /users.json
     def create

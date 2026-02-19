@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
   layout :layout
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -37,12 +36,10 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to new_user_session_path, :notice => t(:login_first)
   end
-
   def set_locale
     I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
     session[:locale] = I18n.locale
   end
-
   def layout
     if(params[:no_layout])
       return nil

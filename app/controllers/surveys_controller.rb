@@ -10,6 +10,7 @@ class SurveysController < ApplicationController
     # GET /surveys/1
     # GET /surveys/1.json
     def show
+      @question_categories = QuestionCategory.where(survey_id: @survey).order('id desc').all
     end
 
 

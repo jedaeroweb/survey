@@ -10,7 +10,6 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
 
       t.string :encrypted_password, :null => false, :limit=>60
       t.boolean :sex, :null=>false, :default=>true
-      t.string :photo, :limit=>150
       t.boolean :enable, :null => false, :default => true
 
       t.integer :users_questions_count, :null=>false, :default=>0
@@ -46,6 +45,7 @@ class CreateDeviseToUsers < ActiveRecord::Migration[6.0]
       ## Token authenticatable
       ## t.string :authentication_token
       t.integer :surveys_count, null:false, default: 0
+      t.integer :user_admins_count, null: false, default: 0
 
       # Uncomment below if timestamps were not included in your original model.
       t.timestamps

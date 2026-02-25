@@ -1,5 +1,5 @@
 class UsersQuestionsController < ApplicationController
-    before_action :set_users_questions, only: [:show, :edit, :update, :destroy]
+    before_action :set_users_questions, only: [ :edit, :update ]
 
     def initialize(*params)
         super(*params)
@@ -68,16 +68,6 @@ class UsersQuestionsController < ApplicationController
                 format.html { render :edit }
                 format.json { render json: @users_question.errors, status: :unprocessable_entity }
             end
-        end
-    end
-
-    # DELETE /user_answers/1
-    # DELETE /user_answers/1.json
-    def destroy
-        @users_question.destroy
-        respond_to do |format|
-            format.html { redirect_to users_questions_path }
-            format.json { head :no_content }
         end
     end
 

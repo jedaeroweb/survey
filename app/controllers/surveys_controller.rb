@@ -10,6 +10,13 @@ class SurveysController < ApplicationController
     # GET /surveys/1
     # GET /surveys/1.json
     def show
+        @survey=Survey.find(params[:id])
+        @question_categories=QuestionCategory.where(survey_id: @survey).all
+
+        respond_to do |format|
+            format.html
+            format.json { head :no_content }
+        end
     end
 
 

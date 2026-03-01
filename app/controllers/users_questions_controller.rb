@@ -1,5 +1,5 @@
 class UsersQuestionsController < ApplicationController
-    before_action :set_users_questions, only: [:show, :edit, :update, :destroy]
+    before_action :set_users_questions, only: [:edit, :update, :destroy]
 
     def initialize(*params)
         super(*params)

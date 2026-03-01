@@ -5,7 +5,7 @@ class UserAbility
         can :edit, [User]
         can :manage, [UsersQuestion,UsersQuestionsAnswer]
         if user
-            can :read, [Home,Question, Survey]
+            can :read, [Home,Question,Survey]
             can :manage, [UsersQuestion]
         end
     end

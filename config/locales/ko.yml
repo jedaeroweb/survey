@@ -13,6 +13,12 @@ ko:
   chineses : '중국어'
   english : '영어'
 
+  sitemap: '사이트맵'
+  theme: '모양'
+  light: '밝은'
+  dark: '어두운'
+  auto: '자동'
+
   site_address : '잠자는-사자'
   site_url : 'https://www.sleepinglion.pe.kr/'
   jedearoweb : '제대로웹'

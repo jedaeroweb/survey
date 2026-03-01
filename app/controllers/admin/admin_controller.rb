@@ -1,6 +1,11 @@
 class Admin::AdminController < ApplicationController
     #load_and_authorize_resource except: [:create]
     load_and_authorize_resource
+    helper_method :current_admin
+
+    def current_admin
+      current_user&.admin
+    end
 
     def current_ability
         @current_ability ||= AdminAbility.new(current_admin)
